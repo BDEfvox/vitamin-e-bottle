@@ -1,0 +1,13 @@
+{
+  "name": "vitamin-e-bottle",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "esbuild src/main.js --bundle --outfile=bundle.js --servedir=. --serve=5210",
+    "build": "esbuild src/main.js --bundle --minify --outfile=bundle.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "three": "^0.187.0"
+  }
+}
