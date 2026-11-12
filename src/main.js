@@ -129,7 +129,8 @@ function bake(size) {
   const accRT = new THREE.WebGLRenderTarget(res, res, { ...hdr, depthBuffer: false });
   plateRT = new THREE.WebGLRenderTarget(res, res, { ...hdr, depthBuffer: false });
   dataRT = new THREE.WebGLRenderTarget(res, res, {
-    type: THREE.FloatType, minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter, depthBuffer: true,
+    // half float: phones often cannot render to full-float textures
+    type: THREE.HalfFloatType, minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter, depthBuffer: true,
   });
   const mirrorRes = res > 1100 ? 1024 : 768;
   mirrorRT = new THREE.WebGLRenderTarget(mirrorRes, mirrorRes, {
